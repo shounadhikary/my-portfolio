@@ -35,7 +35,7 @@ email: "shounadhikary725@gmail.com",
   social: {
     github: "https://github.com/shounadhikary",
     linkedin: "https://www.linkedin.com/in/shoun-adhikary/",
-     twitter: "https://twitter.com/shounadhikary", 
+     twitter: "https://twitter.com/shounadhikary ", 
     leetcode: "https://leetcode.com/u/shoun725/",
     kaggle: "https://kaggle.com/",
     scholar: "https://scholar.google.com/",
