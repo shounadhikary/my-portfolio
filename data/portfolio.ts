@@ -410,20 +410,20 @@ export const achievements = [
   },
 ];
 
-export const blogs = [
- // {
-   // title: "Understanding Proximal Policy Optimization (PPO) from Scratch",
-    //excerpt:
-    //  "A deep dive into PPO — one of the most popular RL algorithms — with math intuition, code walkthrough, and practical tips.",
-   // date: "Nov 2024",
-   // readTime: "12 min read",
-    //tags: ["Reinforcement Learning", "PPO", "Deep Learning"],
-   // image: "/blog/ppo.jpg",
-  //  gradient: "from-cyan-600 to-blue-700",
-   // link: "https://medium.com/@alexjohnson/ppo-from-scratch",
-    //views: "4.2k",
- // },
-  
+export const blogs =  [
+  {
+    title: "Understanding Proximal Policy Optimization (PPO) from Scratch",
+    excerpt:
+      "A deep dive into PPO — one of the most popular RL algorithms — with math intuition, code walkthrough, and practical tips.",
+    date: "Nov 2024",
+    readTime: "12 min read",
+    tags: ["Reinforcement Learning", "PPO", "Deep Learning"],
+    image: "/blog/ppo.jpg",
+    gradient: "from-cyan-600 to-blue-700",
+    link: "https://medium.com/@shounadhikary",
+    views: "4.2k",
+  },
+
 ];
 
 export const githubStats = {
