@@ -39,7 +39,7 @@ export function LoadingScreen() {
             <div className="w-20 h-20 mx-auto mb-8 relative">
               <div className="absolute inset-0 rounded-2xl rotate-45 bg-gradient-to-br from-cyan-400 to-violet-600 animate-pulse" />
               <div className="absolute inset-[3px] rounded-xl rotate-45 bg-[#050810] flex items-center justify-center">
-                <span className="font-display text-2xl font-bold gradient-text -rotate-45">AJ</span>
+                <span className="font-display text-2xl font-bold gradient-text -rotate-45">SA</span>
               </div>
             </div>
 
