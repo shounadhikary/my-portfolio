@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Mail, Heart, ExternalLink } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/ui/SocialIcons";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { personalInfo } from "@/data/portfolio";
 
 const navLinks = [
@@ -60,7 +60,7 @@ export function Footer() {
               {[
                 { href: personalInfo.social.github, icon: GithubIcon, label: "GitHub" },
                 { href: personalInfo.social.linkedin, icon: LinkedinIcon, label: "LinkedIn" },
-                { href: personalInfo.social.twitter, icon: TwitterIcon, label: "Twitter" },
+                //{ href: personalInfo.social.twitter, icon: TwitterIcon, label: "Twitter" },
                 { href: `mailto:${personalInfo.email}`, icon: Mail, label: "Email" },
               ].map(({ href, icon: Icon, label }) => (
                 <motion.a
