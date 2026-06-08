@@ -1,4 +1,4 @@
-# Alex Johnson — AI/ML Portfolio
+# Shoun Adhikary — AI/ML Portfolio
 
 A premium, modern portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.
 
