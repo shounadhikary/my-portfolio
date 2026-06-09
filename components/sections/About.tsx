@@ -7,8 +7,8 @@ import { personalInfo, education } from "@/data/portfolio";
 export function About() {
   const facts = [
     { icon: Code2, label: "Years Coding", value: "5+", color: "#00D9FF" },
-    { icon: Brain, label: "ML Projects", value: "20+", color: "#7C3AED" },
-    { icon: Trophy, label: "Competitions Won", value: "8+", color: "#F59E0B" },
+    { icon: Brain, label: "ML Projects", value: "5", color: "#7C3AED" },
+    { icon: Trophy, label: "Competitions Won", value: "", color: "#F59E0B" },
     { icon: Coffee, label: "Coffee Cups", value: "∞", color: "#10B981" },
   ];
 
@@ -33,7 +33,7 @@ export function About() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="font-display text-9xl font-bold"
                     style={{ background: "linear-gradient(135deg, #00D9FF, #7C3AED)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                    AJ
+                    SA
                   </span>
                 </div>
                 <div className="absolute inset-0 rounded-3xl border border-cyan-400/20" />
