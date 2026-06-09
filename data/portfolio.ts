@@ -414,7 +414,7 @@ export const blogs =  [
   {
     title: "Understanding Proximal Policy Optimization (PPO) from Scratch",
     excerpt:
-      "A deep dive into PPO — one of the most popular RL algorithms — with math intuition, code walkthrough, and practical tips.",
+      "A deep dive into PPO - one of the most popular RL algorithms - with math intuition, code walkthrough, and practical tips.",
     date: "Nov 2024",
     readTime: "12 min read",
     tags: ["Reinforcement Learning", "PPO", "Deep Learning"],
