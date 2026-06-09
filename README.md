@@ -70,19 +70,19 @@ portfolio/
 **All content lives in one file:** `data/portfolio.ts`
 
 Edit these exports to personalize everything:
-- `personalInfo` — name, bio, location, social links
-- `education` — university, degree, courses, CGPA
-- `skills` — all skill categories with levels
-- `experience` — jobs and research roles
-- `projects` — project cards with links
-- `research` — research interest areas
-- `publications` — papers and thesis
-- `certifications` — credentials
-- `achievements` — awards and hackathons
-- `blogs` — article cards
-- `githubStats` — GitHub numbers
-- `leetcodeStats` — LeetCode numbers
-- `timeline` — journey milestones
+- `personalInfo` - name, bio, location, social links
+- `education` - university, degree, courses, CGPA
+- `skills` - all skill categories with levels
+- `experience` - jobs and research roles
+- `projects` - project cards with links
+- `research` - research interest areas
+- `publications` - papers and thesis
+- `certifications` - credentials
+- `achievements` - awards and hackathons
+- `blogs` - article cards
+- `githubStats` - GitHub numbers
+- `leetcodeStats` - LeetCode numbers
+- `timeline` - journey milestones
 
 ## 📦 Add Your Resume
 
@@ -121,4 +121,4 @@ npm start
 - **Fonts:** Syne + DM Sans + JetBrains Mono (Google Fonts)
 
 ## 📝 License
-MIT — free to use and customize.
+MIT - free to use and customize.
