@@ -28,7 +28,7 @@ portfolio/
 ├── app/
 │   ├── globals.css        # Global styles, CSS variables, animations
 │   ├── layout.tsx         # Root layout with SEO metadata
-│   ├── page.tsx           # Main page — assembles all sections
+│   ├── page.tsx           # Main page - assembles all sections
 │   ├── sitemap.ts         # Auto-generated sitemap
 │   └── robots.ts          # SEO robots config
 ├── components/
@@ -59,7 +59,7 @@ portfolio/
 │       ├── BackToTop.tsx      # Back-to-top button
 │       └── LoadingScreen.tsx  # Animated loading screen
 ├── data/
-│   └── portfolio.ts       # ⭐ ALL CONTENT — edit this file!
+│   └── portfolio.ts       # ⭐ ALL CONTENT - edit this file!
 ├── lib/
 │   └── utils.ts           # Utility functions
 └── public/                # Static assets (resume.pdf, images)
@@ -93,7 +93,7 @@ public/resume.pdf
 
 ## 🌐 Deployment
 
-### Vercel (Recommended — Free)
+### Vercel (Recommended - Free)
 ```bash
 npm install -g vercel
 vercel
