@@ -60,7 +60,6 @@ export function Footer() {
               {[
                 { href: personalInfo.social.github, icon: GithubIcon, label: "GitHub" },
                 { href: personalInfo.social.linkedin, icon: LinkedinIcon, label: "LinkedIn" },
-                //{ href: personalInfo.social.twitter, icon: TwitterIcon, label: "Twitter" },
                 { href: `mailto:${personalInfo.email}`, icon: Mail, label: "Email" },
               ].map(({ href, icon: Icon, label }) => (
                 <motion.a
