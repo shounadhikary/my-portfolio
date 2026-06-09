@@ -359,7 +359,7 @@ export const certifications = [
 
 export const achievements = [
   {
-    title: "Champion — National AI Hackathon 2024",
+    title: "Champion - National AI Hackathon 2024",
     organization: "Bangladesh AI Society",
     date: "Oct 2024",
     description:
@@ -369,7 +369,7 @@ export const achievements = [
     type: "Hackathon",
   },
   {
-    title: "2nd Place — ICPC Asia Regional Contest",
+    title: "2nd Place - ICPC Asia Regional Contest",
     organization: "ICPC",
     date: "Dec 2023",
     description:
@@ -379,7 +379,7 @@ export const achievements = [
     type: "Competition",
   },
   {
-    title: "University Merit Scholarship — Full Tuition",
+    title: "University Merit Scholarship - Full Tuition",
     organization: "BUET",
     date: "2021 – Present",
     description:
@@ -389,7 +389,7 @@ export const achievements = [
     type: "Scholarship",
   },
   {
-    title: "Top 3% — Kaggle Machine Learning Competition",
+    title: "Top 3% - Kaggle Machine Learning Competition",
     organization: "Kaggle",
     date: "Aug 2023",
     description:
@@ -399,7 +399,7 @@ export const achievements = [
     type: "Competition",
   },
   {
-    title: "Best Research Paper — BUET CSE Fest 2023",
+    title: "Best Research Paper - GUB CSE Fest 2023",
     organization: "BUET",
     date: "Mar 2023",
     description:
