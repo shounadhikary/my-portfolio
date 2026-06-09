@@ -246,10 +246,10 @@ export function Hero() {
           className="mt-16 flex flex-wrap items-center justify-center gap-8"
         >
           {[
-            { value: "3.85", label: "CGPA", suffix: "/4.0" },
-            { value: "1+", label: "Papers", suffix: "" },
-            { value: "487", label: "LeetCode", suffix: " solved" },
-            { value: "1.2k+", label: "GitHub Stars", suffix: "" },
+            { value: "0.00", label: "CGPA", suffix: "/4.0" },
+            { value: "1", label: "Papers", suffix: "" },
+            { value: "76", label: "LeetCode", suffix: " solved" },
+            { value: "0.0", label: "GitHub Stars", suffix: "" },
           ].map(({ value, label, suffix }) => (
             <div key={label} className="text-center">
               <div className="font-display text-2xl font-bold text-cyan-400">
