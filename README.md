@@ -2,7 +2,7 @@
 
 A premium, modern portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+ ([download](https://nodejs.org))
@@ -21,7 +21,7 @@ npm run dev
 # → http://localhost:3000
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio/
@@ -59,13 +59,13 @@ portfolio/
 │       ├── BackToTop.tsx      # Back-to-top button
 │       └── LoadingScreen.tsx  # Animated loading screen
 ├── data/
-│   └── portfolio.ts       # ⭐ ALL CONTENT - edit this file!
+│   └── portfolio.ts       #  ALL CONTENT - edit this file!
 ├── lib/
 │   └── utils.ts           # Utility functions
 └── public/                # Static assets (resume.pdf, images)
 ```
 
-## ✏️ Customization
+## Customization
 
 **All content lives in one file:** `data/portfolio.ts`
 
@@ -84,14 +84,14 @@ Edit these exports to personalize everything:
 - `leetcodeStats` - LeetCode numbers
 - `timeline` - journey milestones
 
-## 📦 Add Your Resume
+##  Add Your Resume
 
 Place your resume PDF at:
 ```
 public/resume.pdf
 ```
 
-## 🌐 Deployment
+# Deployment
 
 ### Vercel (Recommended - Free)
 ```bash
@@ -111,7 +111,7 @@ npm run build
 npm start
 ```
 
-## 🛠 Tech Stack
+## 🛠Tech Stack
 - **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
@@ -120,5 +120,5 @@ npm start
 - **Icons:** Lucide React
 - **Fonts:** Syne + DM Sans + JetBrains Mono (Google Fonts)
 
-## 📝 License
+## License
 MIT - free to use and customize.
