@@ -513,7 +513,7 @@ export const achievements = [
     date: "2025",
     description:
       "Recognized for the best project in the Inter-Disciplinary Project (IDP-2) course, awarded for outstanding design, implementation, and presentation.",
-    icon: "🏆",
+    icon: "",
     color: "#F59E0B",
     type: "Award",
   },
@@ -524,7 +524,7 @@ export const achievements = [
     date: "2025",
     description:
       "Making strong progress in a Software Quality Assurance internship - gaining hands-on experience in software testing, quality assurance processes, and identifying and reporting defects to ensure reliable software.",
-    icon: "💼",
+    icon: "",
     color: "#3B82F6",
     type: "Internship",
   },
@@ -534,7 +534,7 @@ export const achievements = [
     date: "2026",
     description:
       "Designed, built, and deployed three end-to-end projects: an AI study platform (StudyMind), a privacy-first browser converter (ConverterHub), and a machine-learning energy forecasting service - spanning full-stack web, AI, and MLOps.",
-    icon: "🚀",
+    icon: "",
     color: "#14B8A6",
     type: "Project",
   },
