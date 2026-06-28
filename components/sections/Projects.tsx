@@ -16,7 +16,7 @@ export function Projects() {
   );
 
   return (
-    <section id="projects" className="py-24 bg-[#0D1117]">
+    <section id="projects" className="py-24 bg-surface">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle
           eyebrow="What I've Built"
@@ -35,7 +35,7 @@ export function Projects() {
               className={`px-5 py-2 rounded-xl text-sm font-medium font-mono transition-all border ${
                 activeFilter === cat
                   ? "text-white border-transparent"
-                  : "glass border-[#1E2D3D] text-slate-400 hover:text-slate-200"
+                  : "glass border-line text-dim hover:text-strong"
               }`}
               style={activeFilter === cat
                 ? { background: "linear-gradient(135deg, #00D9FF, #7C3AED)", boxShadow: "0 0 20px rgba(0,217,255,0.3)" }
@@ -58,7 +58,7 @@ export function Projects() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 whileHover={{ y: -6 }}
-                className="group glass border border-[#1E2D3D] rounded-2xl overflow-hidden hover:border-cyan-400/40 transition-all duration-300"
+                className="group glass border border-line rounded-2xl overflow-hidden hover:border-cyan-400/40 transition-all duration-300"
               >
                 {/* Image / gradient header */}
                 <div className={`relative h-44 bg-gradient-to-br ${project.gradient} flex items-center justify-center overflow-hidden`}>
@@ -93,38 +93,38 @@ export function Projects() {
                 {/* Content */}
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="font-display font-bold text-slate-100 text-base leading-snug">{project.title}</h3>
-                    <div className="flex items-center gap-3 text-xs text-slate-500 flex-shrink-0">
+                    <h3 className="font-display font-bold text-strong text-base leading-snug">{project.title}</h3>
+                    <div className="flex items-center gap-3 text-xs text-faint flex-shrink-0">
                       <span className="flex items-center gap-1"><Star size={12} className="text-yellow-400" /> {project.stats.stars}</span>
                       <span className="flex items-center gap-1"><GitFork size={12} /> {project.stats.forks}</span>
                     </div>
                   </div>
 
-                  <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">{project.description}</p>
+                  <p className="text-dim text-sm leading-relaxed mb-4 line-clamp-3 text-justify hyphens-auto">{project.description}</p>
 
                   {/* Tech stack */}
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {project.technologies.slice(0, 4).map((tech) => (
-                      <span key={tech} className="text-xs font-mono px-2 py-0.5 rounded-md text-slate-500 border border-[#1E2D3D] bg-[#1A2332]">
+                      <span key={tech} className="text-xs font-mono px-2 py-0.5 rounded-md text-faint border border-line bg-mutedbg">
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 4 && (
-                      <span className="text-xs font-mono px-2 py-0.5 rounded-md text-slate-600 border border-[#1E2D3D]">
+                      <span className="text-xs font-mono px-2 py-0.5 rounded-md text-faint border border-line">
                         +{project.technologies.length - 4}
                       </span>
                     )}
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-3 pt-3 border-t border-[#1E2D3D]">
+                  <div className="flex gap-3 pt-3 border-t border-line">
                     <a href={project.github} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-400 transition-colors">
+                      className="flex items-center gap-1.5 text-xs text-dim hover:text-cyan-400 transition-colors">
                       <GithubIcon size={13} /> GitHub
                     </a>
                     {project.demo && (
                       <a href={project.demo} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-400 transition-colors">
+                        className="flex items-center gap-1.5 text-xs text-dim hover:text-cyan-400 transition-colors">
                         <ExternalLink size={13} /> Live Demo
                       </a>
                     )}

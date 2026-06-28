@@ -27,7 +27,7 @@ export function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#050810]"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-base"
         >
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
@@ -38,17 +38,17 @@ export function LoadingScreen() {
             {/* Logo */}
             <div className="w-20 h-20 mx-auto mb-8 relative">
               <div className="absolute inset-0 rounded-2xl rotate-45 bg-gradient-to-br from-cyan-400 to-violet-600 animate-pulse" />
-              <div className="absolute inset-[3px] rounded-xl rotate-45 bg-[#050810] flex items-center justify-center">
+              <div className="absolute inset-[3px] rounded-xl rotate-45 bg-base flex items-center justify-center">
                 <span className="font-display text-2xl font-bold gradient-text -rotate-45">SA</span>
               </div>
             </div>
 
-            <p className="font-mono text-sm text-slate-500 mb-6 tracking-widest uppercase">
+            <p className="font-mono text-sm text-faint mb-6 tracking-widest uppercase">
               Initializing portfolio...
             </p>
 
             {/* Progress bar */}
-            <div className="w-64 h-1 bg-slate-800 rounded-full overflow-hidden">
+            <div className="w-64 h-1 bg-mutedbg rounded-full overflow-hidden">
               <motion.div
                 className="h-full rounded-full"
                 style={{ background: "linear-gradient(90deg, #00D9FF, #7C3AED)" }}
@@ -56,7 +56,7 @@ export function LoadingScreen() {
                 transition={{ duration: 0.1 }}
               />
             </div>
-            <p className="font-mono text-xs text-slate-600 mt-2">{Math.min(Math.round(progress), 100)}%</p>
+            <p className="font-mono text-xs text-faint mt-2">{Math.min(Math.round(progress), 100)}%</p>
           </motion.div>
         </motion.div>
       )}

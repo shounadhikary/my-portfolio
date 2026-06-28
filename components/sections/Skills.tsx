@@ -21,7 +21,7 @@ export function Skills() {
   const activeCategory = categories.find((c) => c.key === active)!;
 
   return (
-    <section id="skills" className="py-24 bg-[#0D1117]">
+    <section id="skills" className="py-24 bg-surface">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle
           eyebrow="What I Know"
@@ -40,7 +40,7 @@ export function Skills() {
               className={`px-5 py-2.5 rounded-xl text-sm font-medium font-mono transition-all duration-200 border ${
                 active === key
                   ? "text-white border-transparent"
-                  : "glass border-[#1E2D3D] text-slate-400 hover:text-slate-200"
+                  : "glass border-line text-dim hover:text-strong"
               }`}
               style={active === key ? { background: color, boxShadow: `0 0 20px ${color}40` } : {}}
             >
@@ -64,18 +64,18 @@ export function Skills() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
               whileHover={{ scale: 1.02, y: -2 }}
-              className="glass border border-[#1E2D3D] rounded-2xl p-5 hover:border-cyan-400/30 transition-all group"
+              className="glass border border-line rounded-2xl p-5 hover:border-cyan-400/30 transition-all group"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{skill.icon}</span>
-                  <span className="font-display font-semibold text-slate-200">{skill.name}</span>
+                  <span className="font-display font-semibold text-strong">{skill.name}</span>
                 </div>
-                <span className="font-mono text-sm text-slate-500">{skill.level}%</span>
+                <span className="font-mono text-sm text-faint">{skill.level}%</span>
               </div>
 
               {/* Progress bar */}
-              <div className="h-2 bg-[#1A2332] rounded-full overflow-hidden">
+              <div className="h-2 bg-mutedbg rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
@@ -103,7 +103,7 @@ export function Skills() {
                       style={{
                         background: dot <= Math.ceil(skill.level / 20)
                           ? activeCategory.color
-                          : "#1A2332",
+                          : "var(--bg-muted)",
                       }}
                     />
                   ))}

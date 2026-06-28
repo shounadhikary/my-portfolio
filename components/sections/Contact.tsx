@@ -34,12 +34,40 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+
+    // Web3Forms access key - safe to expose publicly; routes submissions to the inbox.
+    // Override via NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY if needed.
+    const accessKey =
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "4097edc9-6401-48f8-b023-c925ac5edf04";
+
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500)); // Simulate API call
-    setSubmitting(false);
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setErrors({});
-    toast.success("Message sent! I'll get back to you soon 🚀");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: form.name,
+          email: form.email,
+          subject: `[Portfolio] ${form.subject}`,
+          message: form.message,
+          from_name: form.name,
+          replyto: form.email,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setErrors({});
+        toast.success("Message sent! I'll get back to you soon 🚀");
+      } else {
+        toast.error(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Network error. Please try again or email me directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -50,7 +78,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-[#050810]">
+    <section id="contact" className="py-24 bg-base">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionTitle
           eyebrow="Get In Touch"
@@ -65,11 +93,11 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display text-xl font-bold text-slate-100 mb-2">Let's Collaborate</h3>
-            <p className="text-slate-400 leading-relaxed mb-8">
-              I'm actively looking for research collaborations, internship opportunities (Software Quality Assurance, Software Quality Control, 
+            <h3 className="font-display text-xl font-bold text-strong mb-2">Let&apos;s Collaborate</h3>
+            <p className="text-dim leading-relaxed mb-8 text-justify hyphens-auto">
+              I&apos;m actively looking for research collaborations, internship opportunities (Software Quality Assurance, Software Quality Control,
               Software Engineering), and exciting projects in AI/ML.
-              Whether you're a recruiter, researcher, or fellow developer - let's build something amazing together.
+              Whether you&apos;re a recruiter, researcher, or fellow developer - let&apos;s build something amazing together.
             </p>
 
             {/* Contact info */}
@@ -83,11 +111,11 @@ export function Contact() {
                     <Icon size={18} className="text-cyan-400" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 font-mono">{label}</div>
+                    <div className="text-xs text-faint font-mono">{label}</div>
                     {href ? (
-                      <a href={href} className="text-slate-200 hover:text-cyan-400 transition-colors text-sm">{value}</a>
+                      <a href={href} className="text-strong hover:text-cyan-400 transition-colors text-sm">{value}</a>
                     ) : (
-                      <span className="text-slate-200 text-sm">{value}</span>
+                      <span className="text-strong text-sm">{value}</span>
                     )}
                   </div>
                 </div>
@@ -96,7 +124,7 @@ export function Contact() {
 
             {/* Social links */}
             <div>
-              <p className="text-xs font-mono text-slate-500 mb-3 uppercase tracking-wider">Find me on</p>
+              <p className="text-xs font-mono text-faint mb-3 uppercase tracking-wider">Find me on</p>
               <div className="flex gap-3">
                 {socialLinks.map(({ href, icon: Icon, label }) => (
                   <motion.a
@@ -106,7 +134,7 @@ export function Contact() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-11 h-11 rounded-xl glass border border-[#1E2D3D] flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
+                    className="w-11 h-11 rounded-xl glass border border-line flex items-center justify-center text-dim hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
                     aria-label={label}
                   >
                     <Icon size={18} />
@@ -116,9 +144,9 @@ export function Contact() {
             </div>
 
             {/* Resume link */}
-            <div className="mt-8 pt-6 border-t border-[#1E2D3D]">
+            <div className="mt-8 pt-6 border-t border-line">
               <a href={personalInfo.resumeUrl} download
-                className="flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors">
+                className="flex items-center gap-2 text-sm text-dim hover:text-cyan-400 transition-colors">
                 <ExternalLink size={14} />
                 Download my full resume (PDF)
               </a>
@@ -131,7 +159,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="glass border border-[#1E2D3D] rounded-2xl p-6 space-y-4">
+            <form onSubmit={handleSubmit} className="glass border border-line rounded-2xl p-6 space-y-4">
               {/* Name & Email row */}
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
@@ -139,14 +167,14 @@ export function Contact() {
                   { key: "email" as const, label: "Email Address", placeholder: "shounadhikary725@email.com", type: "email" },
                 ].map(({ key, label, placeholder, type }) => (
                   <div key={key}>
-                    <label className="block text-xs font-mono text-slate-400 mb-1.5">{label}</label>
+                    <label className="block text-xs font-mono text-dim mb-1.5">{label}</label>
                     <input
                       type={type}
                       value={form[key]}
                       onChange={(e) => setForm({ ...form, [key]: e.target.value })}
                       placeholder={placeholder}
-                      className={`w-full bg-[#0D1117] border rounded-xl px-4 py-2.5 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-400/60 transition-colors ${
-                        errors[key] ? "border-red-500/60" : "border-[#1E2D3D]"
+                      className={`w-full bg-surface border rounded-xl px-4 py-2.5 text-sm text-strong placeholder-faint focus:outline-none focus:border-cyan-400/60 transition-colors ${
+                        errors[key] ? "border-red-500/60" : "border-line"
                       }`}
                     />
                     {errors[key] && <p className="text-red-400 text-xs mt-1">{errors[key]}</p>}
@@ -156,14 +184,14 @@ export function Contact() {
 
               {/* Subject */}
               <div>
-                <label className="block text-xs font-mono text-slate-400 mb-1.5">Subject</label>
+                <label className="block text-xs font-mono text-dim mb-1.5">Subject</label>
                 <input
                   type="text"
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
                   placeholder="Research Collaboration / Internship Inquiry / ..."
-                  className={`w-full bg-[#0D1117] border rounded-xl px-4 py-2.5 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-400/60 transition-colors ${
-                    errors.subject ? "border-red-500/60" : "border-[#1E2D3D]"
+                  className={`w-full bg-surface border rounded-xl px-4 py-2.5 text-sm text-strong placeholder-faint focus:outline-none focus:border-cyan-400/60 transition-colors ${
+                    errors.subject ? "border-red-500/60" : "border-line"
                   }`}
                 />
                 {errors.subject && <p className="text-red-400 text-xs mt-1">{errors.subject}</p>}
@@ -171,14 +199,14 @@ export function Contact() {
 
               {/* Message */}
               <div>
-                <label className="block text-xs font-mono text-slate-400 mb-1.5">Message</label>
+                <label className="block text-xs font-mono text-dim mb-1.5">Message</label>
                 <textarea
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Tell me about the opportunity or idea you have in mind..."
-                  className={`w-full bg-[#0D1117] border rounded-xl px-4 py-2.5 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-400/60 transition-colors resize-none ${
-                    errors.message ? "border-red-500/60" : "border-[#1E2D3D]"
+                  className={`w-full bg-surface border rounded-xl px-4 py-2.5 text-sm text-strong placeholder-faint focus:outline-none focus:border-cyan-400/60 transition-colors resize-none ${
+                    errors.message ? "border-red-500/60" : "border-line"
                   }`}
                 />
                 {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}

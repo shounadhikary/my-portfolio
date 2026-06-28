@@ -50,7 +50,7 @@ export function Navbar() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "py-3 glass border-b border-[#1E2D3D]/50"
+            ? "py-3 glass border-b border-line/50"
             : "py-5 bg-transparent"
         }`}
       >
@@ -66,7 +66,7 @@ export function Navbar() {
               style={{ background: "linear-gradient(135deg, #00D9FF, #7C3AED)" }}>
               <span className="font-display text-sm font-bold text-white">SA</span>
             </div>
-            <span className="font-display font-semibold text-slate-200 hidden sm:block">Shoun Adhikary</span>
+            <span className="font-display font-semibold text-strong hidden sm:block">Shoun Adhikary</span>
           </motion.a>
 
           {/* Desktop nav */}
@@ -78,7 +78,7 @@ export function Navbar() {
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeSection === link.href.slice(1)
                     ? "text-cyan-400 bg-cyan-400/10"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-white/5"
+                    : "text-dim hover:text-strong hover:bg-white/5"
                 }`}
               >
                 {link.label}
@@ -100,7 +100,7 @@ export function Navbar() {
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center glass text-slate-400 hover:text-cyan-400 transition-colors"
+              className="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center glass text-dim hover:text-cyan-400 transition-colors"
             >
               {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
@@ -115,7 +115,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-16 left-4 right-4 z-40 rounded-2xl glass border border-[#1E2D3D] p-4 lg:hidden"
+            className="fixed top-16 left-4 right-4 z-40 rounded-2xl glass border border-line p-4 lg:hidden"
           >
             {navLinks.map((link, i) => (
               <motion.button
@@ -124,12 +124,12 @@ export function Navbar() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => scrollTo(link.href)}
-                className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all"
+                className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-body hover:text-cyan-400 hover:bg-cyan-400/10 transition-all"
               >
                 {link.label}
               </motion.button>
             ))}
-            <div className="mt-3 pt-3 border-t border-[#1E2D3D]">
+            <div className="mt-3 pt-3 border-t border-line">
               <a
                 href="/resume.pdf"
                 download

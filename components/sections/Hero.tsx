@@ -115,7 +115,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050810]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-base"
     >
       {/* Particle canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
@@ -151,12 +151,11 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-display text-6xl sm:text-7xl md:text-8xl font-bold mb-4"
         >
-          <span className="text-slate-100">{personalInfo.firstName} </span>
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: "linear-gradient(135deg, #00D9FF, #7C3AED)" }}
           >
-            {personalInfo.lastName}
+            {personalInfo.firstName} {personalInfo.lastName}
           </span>
         </motion.h1>
 
@@ -178,7 +177,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
+          className="text-dim text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
         >
           {personalInfo.bio}
         </motion.p>
@@ -202,7 +201,7 @@ export function Hero() {
           </button>
           <button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-6 py-3 rounded-xl text-sm font-medium text-slate-300 border border-slate-600 hover:border-slate-400 transition-all"
+            className="px-6 py-3 rounded-xl text-sm font-medium text-body border border-line hover:border-line transition-all"
           >
             <Mail size={16} className="inline mr-2" />
             Contact Me
@@ -219,6 +218,7 @@ export function Hero() {
           {[
             { href: personalInfo.social.github, icon: GithubIcon, label: "GitHub" },
             { href: personalInfo.social.linkedin, icon: LinkedinIcon, label: "LinkedIn" },
+            { href: `mailto:${personalInfo.email}`, icon: Mail, label: "Email" },
           ].map(({ href, icon: Icon, label }) => (
             <motion.a
               key={label}
@@ -227,13 +227,13 @@ export function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="w-11 h-11 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-colors"
+              className="w-11 h-11 rounded-xl glass flex items-center justify-center text-dim hover:text-cyan-400 transition-colors"
               aria-label={label}
             >
               <Icon size={18} />
             </motion.a>
           ))}
-          <span className="text-slate-600 text-sm font-mono px-2">
+          <span className="text-faint text-sm font-mono px-2">
             {personalInfo.location}
           </span>
         </motion.div>
@@ -253,9 +253,9 @@ export function Hero() {
           ].map(({ value, label, suffix }) => (
             <div key={label} className="text-center">
               <div className="font-display text-2xl font-bold text-cyan-400">
-                {value}<span className="text-sm text-slate-500">{suffix}</span>
+                {value}<span className="text-sm text-faint">{suffix}</span>
               </div>
-              <div className="text-xs text-slate-500 font-mono uppercase tracking-wider mt-1">{label}</div>
+              <div className="text-xs text-faint font-mono uppercase tracking-wider mt-1">{label}</div>
             </div>
           ))}
         </motion.div>
@@ -266,7 +266,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-faint"
       >
         <span className="font-mono text-xs">scroll</span>
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>

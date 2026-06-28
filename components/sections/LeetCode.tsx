@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { LeetCodeHeatmap } from "@/components/sections/LeetCodeHeatmap";
 import { leetcodeStats, personalInfo } from "@/data/portfolio";
 import { ExternalLink, Zap, Target, Flame } from "lucide-react";
 
@@ -9,7 +10,7 @@ export function LeetCode() {
     (leetcodeStats.totalSolved / (leetcodeStats.totalEasy + leetcodeStats.totalMedium + leetcodeStats.totalHard)) * 100;
 
   return (
-    <section id="leetcode" className="py-24 bg-[#0D1117]">
+    <section id="leetcode" className="py-24 bg-surface">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionTitle
           eyebrow="Competitive Programming"
@@ -23,10 +24,10 @@ export function LeetCode() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass border border-[#1E2D3D] rounded-2xl p-6"
+            className="glass border border-line rounded-2xl p-6"
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="font-display font-bold text-slate-100 text-lg">LeetCode Status</h3>
+              <h3 className="font-display font-bold text-strong text-lg">LeetCode Status</h3>
               <a href={personalInfo.social.leetcode} target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 transition-colors">
                 <ExternalLink size={12} /> Profile
@@ -37,7 +38,7 @@ export function LeetCode() {
             <div className="flex items-center gap-6 mb-6">
               <div className="relative w-32 h-32">
                 <svg className="w-32 h-32 -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="40" fill="none" stroke="#1A2332" strokeWidth="8" />
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="var(--bg-muted)" strokeWidth="8" />
                   <motion.circle
                     cx="50" cy="50" r="40" fill="none" stroke="url(#grad)" strokeWidth="8"
                     strokeLinecap="round"
@@ -55,8 +56,8 @@ export function LeetCode() {
                   </defs>
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="font-display text-2xl font-bold text-slate-100">{leetcodeStats.totalSolved}</span>
-                  <span className="text-xs text-slate-500">solved</span>
+                  <span className="font-display text-2xl font-bold text-strong">{leetcodeStats.totalSolved}</span>
+                  <span className="text-xs text-faint">solved</span>
                 </div>
               </div>
 
@@ -69,9 +70,9 @@ export function LeetCode() {
                   <div key={label}>
                     <div className="flex justify-between text-xs mb-1">
                       <span style={{ color }}>{label}</span>
-                      <span className="text-slate-500 font-mono">{solved}/{total}</span>
+                      <span className="text-faint font-mono">{solved}/{total}</span>
                     </div>
-                    <div className="h-1.5 bg-[#1A2332] rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-mutedbg rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${(solved / total) * 100}%` }}
@@ -115,20 +116,23 @@ export function LeetCode() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass border border-[#1E2D3D] rounded-2xl p-5 flex items-center gap-4 hover:border-cyan-400/30 transition-all"
+                className="glass border border-line rounded-2xl p-5 flex items-center gap-4 hover:border-cyan-400/30 transition-all"
               >
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center"
                   style={{ background: `${color}15`, border: `1px solid ${color}30` }}>
                   <Icon size={20} style={{ color }} />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-500 font-mono">{label}</div>
-                  <div className="font-display text-xl font-bold text-slate-100">{value}</div>
+                  <div className="text-xs text-faint font-mono">{label}</div>
+                  <div className="font-display text-xl font-bold text-strong">{value}</div>
                 </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
+
+        {/* Submission calendar (LeetCode-style heatmap) */}
+        <LeetCodeHeatmap />
       </div>
     </section>
   );

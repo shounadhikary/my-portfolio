@@ -5,7 +5,7 @@ import { achievements } from "@/data/portfolio";
 
 export function Achievements() {
   return (
-    <section id="achievements" className="py-24 bg-[#0D1117]">
+    <section id="achievements" className="py-24 bg-surface">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionTitle
           eyebrow="Recognition"
@@ -21,7 +21,7 @@ export function Achievements() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -4, scale: 1.01 }}
-              className="glass border border-[#1E2D3D] rounded-2xl p-5 hover:border-cyan-400/30 transition-all group"
+              className="glass border border-line rounded-2xl p-5 hover:border-cyan-400/30 transition-all group"
             >
               <div className="flex items-start gap-3 mb-3">
                 <span className="text-3xl">{ach.icon}</span>
@@ -32,9 +32,9 @@ export function Achievements() {
                   </span>
                 </div>
               </div>
-              <h3 className="font-display font-bold text-slate-100 text-sm leading-snug mb-2">{ach.title}</h3>
-              <p className="text-xs text-slate-500 mb-2">{ach.organization} · {ach.date}</p>
-              <p className="text-xs text-slate-400 leading-relaxed">{ach.description}</p>
+              <h3 className="font-display font-bold text-strong text-sm leading-snug mb-2">{ach.title}</h3>
+              <p className="text-xs text-faint mb-2">{ach.organization} · {ach.date}</p>
+              <p className="text-xs text-dim leading-relaxed text-justify hyphens-auto">{ach.description}</p>
             </motion.div>
           ))}
         </div>

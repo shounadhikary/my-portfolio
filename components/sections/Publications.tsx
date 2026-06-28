@@ -18,7 +18,7 @@ const statusColors: Record<string, string> = {
 
 export function Publications() {
   return (
-    <section id="publications" className="py-24 bg-[#0D1117]">
+    <section id="publications" className="py-24 bg-surface">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <SectionTitle
           eyebrow="Academic Output"
@@ -36,7 +36,7 @@ export function Publications() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="glass border border-[#1E2D3D] rounded-2xl p-6 hover:border-cyan-400/30 transition-all group"
+                className="glass border border-line rounded-2xl p-6 hover:border-cyan-400/30 transition-all group"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center flex-shrink-0">
@@ -44,7 +44,7 @@ export function Publications() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-3 mb-2">
-                      <h3 className="font-display font-bold text-slate-100 text-base leading-snug group-hover:text-cyan-400 transition-colors">
+                      <h3 className="font-display font-bold text-strong text-base leading-snug group-hover:text-cyan-400 transition-colors">
                         {pub.title}
                       </h3>
                       <span className="text-xs font-mono px-2.5 py-1 rounded-full flex-shrink-0"
@@ -57,19 +57,19 @@ export function Publications() {
                       </span>
                     </div>
 
-                    <p className="text-sm text-slate-400 mb-1">{pub.authors}</p>
+                    <p className="text-sm text-dim mb-1">{pub.authors}</p>
                     <p className="text-sm text-cyan-400/80 font-medium mb-2">{pub.venue}</p>
-                    <p className="text-xs text-slate-500 mb-4">{pub.abstract}</p>
+                    <p className="text-xs text-faint mb-4 text-justify hyphens-auto">{pub.abstract}</p>
 
                     <div className="flex items-center justify-between">
                       <div className="flex flex-wrap gap-1.5">
                         {pub.tags.map((tag) => (
-                          <span key={tag} className="text-xs font-mono px-2 py-0.5 rounded-md text-slate-500 border border-[#1E2D3D] bg-[#1A2332]">
+                          <span key={tag} className="text-xs font-mono px-2 py-0.5 rounded-md text-faint border border-line bg-mutedbg">
                             {tag}
                           </span>
                         ))}
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-slate-500">
+                      <div className="flex items-center gap-3 text-xs text-faint">
                         <span className="font-mono">{pub.year}</span>
                         {pub.link && (
                           <a href={pub.link} target="_blank" rel="noopener noreferrer"

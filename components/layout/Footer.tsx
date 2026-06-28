@@ -20,7 +20,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#050810] border-t border-[#1E2D3D]">
+    <footer className="bg-base border-t border-line">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid sm:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
@@ -30,22 +30,22 @@ export function Footer() {
                 style={{ background: "linear-gradient(135deg, #00D9FF, #7C3AED)" }}>
                 SA
               </div>
-              <span className="font-display font-semibold text-slate-200">{personalInfo.name}</span>
+              <span className="font-display font-semibold text-strong">{personalInfo.name}</span>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed">
+            <p className="text-sm text-faint leading-relaxed text-justify hyphens-auto">
               CSE Student · AI/ML Researcher<br />Building intelligent systems.
             </p>
           </div>
 
           {/* Nav */}
           <div>
-            <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-4">Navigation</p>
+            <p className="text-xs font-mono text-faint uppercase tracking-wider mb-4">Navigation</p>
             <div className="grid grid-cols-2 gap-1.5">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="text-sm text-slate-400 hover:text-cyan-400 transition-colors text-left"
+                  className="text-sm text-dim hover:text-cyan-400 transition-colors text-left"
                 >
                   {link.label}
                 </button>
@@ -55,7 +55,7 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <p className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-4">Connect</p>
+            <p className="text-xs font-mono text-faint uppercase tracking-wider mb-4">Connect</p>
             <div className="flex gap-3">
               {[
                 { href: personalInfo.social.github, icon: GithubIcon, label: "GitHub" },
@@ -68,7 +68,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-xl glass border border-[#1E2D3D] flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
+                  className="w-10 h-10 rounded-xl glass border border-line flex items-center justify-center text-dim hover:text-cyan-400 hover:border-cyan-400/40 transition-all"
                   aria-label={label}
                 >
                   <Icon size={16} />
@@ -76,17 +76,17 @@ export function Footer() {
               ))}
             </div>
             <a href={personalInfo.resumeUrl} download
-              className="mt-4 flex items-center gap-1.5 text-xs text-slate-500 hover:text-cyan-400 transition-colors">
+              className="mt-4 flex items-center gap-1.5 text-xs text-faint hover:text-cyan-400 transition-colors">
               <ExternalLink size={12} /> Download Resume
             </a>
           </div>
         </div>
 
-        <div className="pt-6 border-t border-[#1E2D3D] flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-slate-600 font-mono">
+        <div className="pt-6 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-faint font-mono">
             © {new Date().getFullYear()} {personalInfo.name} · All rights reserved
           </p>
-          <p className="text-xs text-slate-600 flex items-center gap-1">
+          <p className="text-xs text-faint flex items-center gap-1">
             Built with <Heart size={10} className="text-red-400" /> using Next.js & Framer Motion
           </p>
         </div>

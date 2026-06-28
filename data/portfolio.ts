@@ -1,5 +1,5 @@
 // ============================================================
-// PORTFOLIO DATA — Edit this file to customize all content
+// PORTFOLIO DATA - Edit this file to customize all content
 // ============================================================
 
 export const personalInfo = {
@@ -21,7 +21,7 @@ export const personalInfo = {
 
 My journey started with competitive programming, which helped me develop strong problem-solving and algorithmic thinking skills. Over time, I expanded into software development, testing, and machine learning, gaining hands-on experience in building and ensuring the quality of end-to-end systems.
 
-I have worked on both development and testing workflows, contributing to scalable applications and exploring AI-driven solutions. I am particularly interested in bridging Software Engineering, QA, and Machine Learning to build robust, reliable, and intelligent systems.
+I have worked on testing workflows, contributing to scalable applications and exploring AI-driven solutions. I am particularly interested in bridging Software Engineering, QA, and Machine Learning to build robust, reliable, and intelligent systems.
 
 Outside of technical work, I continue to solve algorithmic problems, explore new technologies, and engage with the developer community to continuously grow my skills.`,
 location: "Dhaka, Bangladesh",
@@ -49,7 +49,7 @@ export const education = [
     degree: "Bachelor of Science in Computer Science",
     institution: "Green University of Bangladesh",
     location: "Dhaka, Bangladesh",
-    period: "2021 – 2025 ",
+    period: "2021 - 2025 ",
     cgpa: " 0.00 / 4.00",
     courses: [
       "Artificial Intelligence",
@@ -124,8 +124,8 @@ export const experience = [
   {
     title: "Software Quality Assurance Intern",
 company: "QA Harbor Limited",
-location: "Dhaka, Bangladesh",
-period: "January 2025 – May 2025",
+location: "Mohakhali-DOHS, Dhaka, Bangladesh",
+period: "January 2025 - May 2025",
 type: "Internship",
 description:
   "Worked on software quality assurance processes, including manual testing, test case design, defect tracking, and quality validation of web applications. Collaborated with development teams to ensure product reliability and adherence to quality standards.",
@@ -148,7 +148,123 @@ responsibilities: [
 ];
 
 export const projects = [
+
 {
+  title: "StudyMind",
+  description:
+    "An AI-powered study companion that turns PDFs and notes into summaries, cited answers, quizzes, flashcards, and mind maps.",
+
+  longDescription:
+    "Built a full-stack AI study platform where students upload study materials and get AI-generated summaries, RAG-based cited answers, auto-graded quizzes, spaced-repetition flashcards, and interactive mind maps. Features a multi-provider AI architecture with automatic fallback between Gemini and Groq, and a from-scratch RAG pipeline (chunking, embeddings, pgvector retrieval with page-level citations) built without LangChain.",
+
+  image: "/projects/studymind.jpg",
+  gradient: "from-teal-500 to-cyan-600",
+
+  technologies: [
+    "Next.js 16",
+    "TypeScript",
+    "Clerk",
+    "Supabase",
+    "Prisma",
+    "Google Gemini",
+    "Groq",
+  ],
+
+  category: "Full-Stack / AI",
+
+  github: "https://github.com/shounadhikary/StudyMind",
+  demo: "https://study-mind-six.vercel.app",
+
+  featured: true,
+
+  stats: {
+    stars: 1,
+    forks: 0,
+  },
+},
+
+
+
+
+
+{
+  title: "ConverterHub",
+  description:
+    "A privacy-first file and text converter with 38 tools that run 100% in the browser - no uploads, no servers.",
+
+  longDescription:
+    "Developed a privacy-first conversion web app with 38 tools across 9 categories (image, PDF, data/text, encoders, generators, calculators, and Bangla utilities). All processing runs entirely in the browser using Canvas, Web Crypto, Web Audio, and WASM, so files never leave the user's device. Includes PWA offline support, dark/light theming, optional Clerk authentication, and SEO optimization. Conversion logic is decoupled from the UI, and heavy libraries are dynamically imported for performance.",
+
+  image: "/projects/converterhub.jpg",
+  gradient: "from-blue-500 to-indigo-600",
+
+  technologies: [
+    "Next.js 15",
+    "TypeScript",
+    "TailwindCSS",
+    "Clerk",
+  ],
+
+  category: "Web",
+
+  github: "https://github.com/shounadhikary/ConverterHub",
+  demo: "https://converter-hub-roew.vercel.app",
+
+  featured: true,
+
+  stats: {
+    stars: 1,
+    forks: 0,
+  },
+},
+
+
+
+
+
+
+
+{
+  title: "Energy Consumption Forecasting Service",
+  description:
+    "An end-to-end ML system that forecasts short-term electricity demand using near real-time grid data.",
+
+  longDescription:
+    "Built an end-to-end machine learning system that forecasts short-term electricity demand. The pipeline fetches near real-time hourly demand from the U.S. EIA API, engineers time-series features (lag, rolling statistics, calendar features), and uses a trained XGBoost model that achieves ~1% mean absolute error - roughly 3x better than a Linear Regression baseline. Predictions are served through a FastAPI REST API and an interactive Streamlit dashboard, with pytest tests and a GitHub Actions CI pipeline covering the full ML lifecycle.",
+
+  image: "/projects/energy-forecast.jpg",
+  gradient: "from-amber-500 to-orange-600",
+
+  technologies: [
+    "Python",
+    "XGBoost",
+    "FastAPI",
+    "Streamlit",
+    "scikit-learn",
+  ],
+
+  category: "Machine Learning",
+
+  github: "https://github.com/shounadhikary/energy-forecast-service",
+   demo: "https://energy-forecast-service-htr6df338mxqybebldktky.streamlit.app/",
+
+  featured: true,
+
+  stats: {
+    stars: 1,
+    forks: 0,
+  },
+},
+
+
+
+
+
+
+
+
+
+  {
   title: "FanVerse AI - Intelligent Fan Community Platform (Ongoing)",
   description:
     "AI-powered fan engagement platform that generates personalized content, predicts trending topics, and enables immersive character interactions using large language models. Achieved 3× engagement lift across 50K+ active users.",
@@ -197,6 +313,20 @@ export const projects = [
 
 ];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const research = [
   {
     title: "Deep Reinforcement Learning for Multi-Agent Systems",
@@ -206,53 +336,61 @@ export const research = [
     color: "#00D9FF",
     description:
       "Investigating emergent cooperative and competitive behaviors in multi-agent RL environments. Focusing on scalable communication protocols and credit assignment.",
-    papers: 1,
-    progress: 70,
-  },
-  {
-    title: "Transformer Architectures for Computer Vision",
-    status: "Completed",
-    area: "Computer Vision",
-    icon: "👁️",
-    color: "#7C3AED",
-    description:
-      "Explored Vision Transformers (ViT) and hybrid CNN-Transformer models for medical image segmentation tasks.",
-    papers: 2,
-    progress: 100,
-  },
-  {
-    title: "Optimization Algorithms for Neural Architecture Search",
-    status: "Ongoing",
-    area: "Optimization",
-    icon: "⚡",
-    color: "#10B981",
-    description:
-      "Developing efficient NAS methods using evolutionary algorithms and Bayesian optimization to automate model design.",
     papers: 0,
-    progress: 40,
+    progress: 30,
   },
-  {
-    title: "Adversarial Robustness in Deep Learning",
-    status: "Planned",
-    area: "Cyber Security",
-    icon: "🛡️",
-    color: "#F59E0B",
-    description:
-      "Future research into adversarial attacks on neural networks and developing robust defense mechanisms for safety-critical applications.",
-    papers: 0,
-    progress: 10,
-  },
-  {
-    title: "Graph Neural Networks for Drug Discovery",
-    status: "Planned",
-    area: "Data Science",
-    icon: "💊",
-    color: "#EF4444",
-    description:
-      "Applying GNNs to molecular property prediction and virtual drug screening to accelerate pharmaceutical research.",
-    papers: 0,
-    progress: 5,
-  },
+  
+{
+  title: "Privacy-First Client-Side Web Applications",
+  status: "Completed",
+  area: "Software Engineering",
+  icon: "🔒",
+  color: "#3B82F6",
+  description:
+    "Designed ConverterHub, a 38-tool converter platform running entirely in-browser to explore offline-capable, zero-server-cost architectures.",
+  papers: 0,
+  progress: 70,
+},
+
+
+
+
+{
+  title: "Smart Edge Computing for Internet of Vehicles",
+  status: "Ongoing",
+  area: "Vehicular Networks",
+  icon: "📡",
+  color: "#F59E0B",
+  description:
+    "Implemented an intelligent edge computing architecture integrating UAV-assisted and parked vehicle-assisted computation offloading. Evaluated system performance under dynamic vehicular environments using deep reinforcement learning.",
+  papers: 1,
+  progress: 50,
+},
+
+{
+  title: "Time-Series Forecasting for Energy Demand",
+  status: "Completed",
+  area: "Machine Learning",
+  icon: "⚡",
+  color: "#10B981",
+  description:
+    "Built an end-to-end XGBoost forecasting service on PJME historical data with FastAPI, Streamlit dashboard, and CI/CD on GitHub Actions.",
+  papers: 0,
+  progress: 60,
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
 
 export const publications = [
@@ -345,6 +483,17 @@ export const certifications = [
     color: "#10B981",
   },
 
+  {
+    name: "Software Engineer",
+    issuer: "HackerRank",
+    instructor: "HackerRank",
+    date: "Jun 2026",
+    credentialId: "671662C69ECA",
+    link: "https://www.hackerrank.com/certificates/671662C69ECA",
+    icon: "💻",
+    color: "#22C55E",
+  },
+
  {
   name: "Foundations of AI and Machine Learning",
   issuer: "Coursera / Microsoft",
@@ -359,55 +508,51 @@ export const certifications = [
 
 export const achievements = [
   {
-    title: "Champion - National AI Hackathon 2024",
-    organization: "Bangladesh AI Society",
-    date: "Oct 2024",
+    title: "Best Project : IDP-2 Course",
+    organization: "University",
+    date: "2025",
     description:
-      "Led a 4-person team to build an AI-powered disaster response system using satellite imagery and RL. Won $5,000 prize among 200+ teams.",
+      "Recognized for the best project in the Inter-Disciplinary Project (IDP-2) course, awarded for outstanding design, implementation, and presentation.",
     icon: "🏆",
     color: "#F59E0B",
-    type: "Hackathon",
-  },
-  {
-    title: "2nd Place - ICPC Asia Regional Contest",
-    organization: "ICPC",
-    date: "Dec 2023",
-    description:
-      "Ranked 2nd among 150 university teams in the International Collegiate Programming Contest Asia Regional.",
-    icon: "🥈",
-    color: "#00D9FF",
-    type: "Competition",
-  },
-  {
-    title: "University Merit Scholarship - Full Tuition",
-    organization: "BUET",
-    date: "2021 – Present",
-    description:
-      "Awarded full tuition scholarship based on outstanding HSC results and entrance examination performance.",
-    icon: "🎓",
-    color: "#7C3AED",
-    type: "Scholarship",
-  },
-  {
-    title: "Top 3% - Kaggle Machine Learning Competition",
-    organization: "Kaggle",
-    date: "Aug 2023",
-    description:
-      "Ranked in top 3% (Gold Medal) in the 2023 Kaggle Tabular Playground Series using ensemble methods.",
-    icon: "🏅",
-    color: "#10B981",
-    type: "Competition",
-  },
-  {
-    title: "Best Research Paper - GUB CSE Fest 2023",
-    organization: "BUET",
-    date: "Mar 2023",
-    description:
-      "Received best undergraduate research paper award for work on CNN-Transformer hybrid architectures.",
-    icon: "📄",
-    color: "#EF4444",
     type: "Award",
   },
+
+{
+    title: "Strong Internship Progress : SQA",
+    organization: "QA Harbor Limited",
+    date: "2025",
+    description:
+      "Making strong progress in a Software Quality Assurance internship - gaining hands-on experience in software testing, quality assurance processes, and identifying and reporting defects to ensure reliable software.",
+    icon: "💼",
+    color: "#3B82F6",
+    type: "Internship",
+  },
+{
+    title: "Built & Deployed 3 Full-Stack / ML Projects",
+    organization: "",
+    date: "2026",
+    description:
+      "Designed, built, and deployed three end-to-end projects: an AI study platform (StudyMind), a privacy-first browser converter (ConverterHub), and a machine-learning energy forecasting service - spanning full-stack web, AI, and MLOps.",
+    icon: "🚀",
+    color: "#14B8A6",
+    type: "Project",
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
 
 export const blogs =  [
@@ -420,14 +565,14 @@ export const blogs =  [
     tags: ["Reinforcement Learning", "PPO", "Deep Learning"],
     image: "/blog/ppo.jpg",
     gradient: "from-cyan-600 to-blue-700",
-    link: "https://medium.com/@shounadhikary",
-    views: "4.2k",
+    link: "",
+    views: "1.0",
   },
 
 ];
 
 export const githubStats = {
-  username: "shounadhhikary",
+  username: "shounadhikary",
   totalRepos: 1,
   totalStars: 1,
   totalForks: 1,
@@ -444,7 +589,7 @@ export const githubStats = {
 
 export const leetcodeStats =
  {
-  username: "alexjohnson",
+  username: "shoun725",
   totalSolved: 64,
   easySolved: 1,
   mediumSolved: 1,
@@ -456,15 +601,12 @@ export const leetcodeStats =
   contestRating: 1,
   maxRating: 1,
   streak: 1,
+  // Submission calendar fallback values (shown until/if the live LeetCode fetch resolves).
+  submissionsLastYear: 99,
+  activeDays: 15,
+  maxStreak: 4,
   badges: ["50 Days Badge", "100 Days Badge", "Knight"],
 };
-
-
-
-
-
-
-
 
 
 

@@ -7,7 +7,7 @@ import { personalInfo } from "@/data/portfolio";
 
 export function Blog() {
   return (
-    <section id="blog" className="py-24 bg-[#050810]">
+    <section id="blog" className="py-24 bg-base">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle
           eyebrow="Knowledge Sharing"
@@ -26,7 +26,7 @@ export function Blog() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -6 }}
-              className="glass border border-[#1E2D3D] rounded-2xl overflow-hidden hover:border-cyan-400/40 transition-all group"
+              className="glass border border-line rounded-2xl overflow-hidden hover:border-cyan-400/40 transition-all group"
             >
               {/* Card header gradient */}
               <div className={`h-36 bg-gradient-to-br ${post.gradient} relative flex items-end p-3`}>
@@ -40,11 +40,11 @@ export function Blog() {
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="font-display font-bold text-slate-100 text-sm leading-snug mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
+                <h3 className="font-display font-bold text-strong text-sm leading-snug mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed mb-3 line-clamp-2">{post.excerpt}</p>
-                <div className="flex items-center justify-between text-xs text-slate-600">
+                <p className="text-xs text-faint leading-relaxed mb-3 line-clamp-2 text-justify hyphens-auto">{post.excerpt}</p>
+                <div className="flex items-center justify-between text-xs text-faint">
                   <div className="flex items-center gap-3">
                     <span className="flex items-center gap-1"><Clock size={10} /> {post.readTime}</span>
                     <span className="flex items-center gap-1"><Eye size={10} /> {post.views}</span>

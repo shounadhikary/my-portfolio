@@ -5,12 +5,12 @@ import { timeline } from "@/data/portfolio";
 
 export function ResearchTimeline() {
   return (
-    <section id="timeline" className="py-24 bg-[#0D1117]">
+    <section id="timeline" className="py-24 bg-surface">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <SectionTitle
           eyebrow="My Story"
           title="Journey Timeline"
-          subtitle="From first lines of code to AI research — the milestones that defined my path"
+          subtitle="From first lines of code to AI research - the milestones that defined my path"
         />
 
         <div className="relative">
@@ -20,7 +20,7 @@ export function ResearchTimeline() {
           <div className="space-y-8">
             {timeline.map((item, i) => (
               <motion.div
-                key={item.year}
+                key={`${item.year}-${i}`}
                 initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -31,15 +31,15 @@ export function ResearchTimeline() {
               >
                 {/* Content */}
                 <div className={`flex-1 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                  <div className={`glass border border-[#1E2D3D] rounded-2xl p-5 hover:border-cyan-400/30 transition-all ${
+                  <div className={`glass border border-line rounded-2xl p-5 hover:border-cyan-400/30 transition-all ${
                     i % 2 === 0 ? "md:mr-0" : "md:ml-0"
                   }`}>
                     <div className={`flex items-center gap-3 mb-2 ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
                       <span className="text-xl">{item.icon}</span>
                       <span className="font-mono text-sm font-bold" style={{ color: item.color }}>{item.year}</span>
                     </div>
-                    <h3 className="font-display font-bold text-slate-100 mb-2">{item.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                    <h3 className="font-display font-bold text-strong mb-2">{item.title}</h3>
+                    <p className="text-dim text-sm leading-relaxed text-justify hyphens-auto">{item.description}</p>
                   </div>
                 </div>
 

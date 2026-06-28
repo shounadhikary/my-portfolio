@@ -2,6 +2,42 @@
 
 @import "tailwindcss";
 
+/* Semantic theme tokens — light values are the default (:root), dark overrides under .dark.
+   Exposed to Tailwind via @theme inline below so utilities react to the active theme live. */
+:root {
+  --bg-base: #DCE3ED;
+  --bg-surface: #E9EEF5;
+  --bg-card: #FFFFFF;
+  --bg-muted: #CDD6E4;
+  --border-line: #BCC7D8;
+  --text-strong: #0B1220;
+  --text-body: #1E293B;
+  --text-dim: #475569;
+  --text-faint: #64748B;
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(188, 199, 216, 0.9);
+  --glass-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  --scrollbar-track: #DCE3ED;
+  --scrollbar-thumb: #AEBACB;
+}
+
+.dark {
+  --bg-base: #050810;
+  --bg-surface: #0D1117;
+  --bg-card: #0F1923;
+  --bg-muted: #1A2332;
+  --border-line: #1E2D3D;
+  --text-strong: #F1F5F9;
+  --text-body: #CBD5E1;
+  --text-dim: #94A3B8;
+  --text-faint: #64748B;
+  --glass-bg: rgba(15, 25, 35, 0.6);
+  --glass-border: rgba(30, 45, 61, 0.8);
+  --glass-shadow: none;
+  --scrollbar-track: #050810;
+  --scrollbar-thumb: #1E2D3D;
+}
+
 @theme {
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
@@ -10,11 +46,19 @@
   --color-accent-secondary: #7C3AED;
   --color-accent-tertiary: #10B981;
   --color-accent-gold: #F59E0B;
-  --color-dark-bg: #050810;
-  --color-dark-surface: #0D1117;
-  --color-dark-card: #0F1923;
-  --color-dark-border: #1E2D3D;
-  --color-dark-muted: #1A2332;
+}
+
+/* inline => utilities reference the CSS var directly, so they update when .dark toggles */
+@theme inline {
+  --color-base: var(--bg-base);
+  --color-surface: var(--bg-surface);
+  --color-card: var(--bg-card);
+  --color-mutedbg: var(--bg-muted);
+  --color-line: var(--border-line);
+  --color-strong: var(--text-strong);
+  --color-body: var(--text-body);
+  --color-dim: var(--text-dim);
+  --color-faint: var(--text-faint);
 }
 
 @layer base {
@@ -24,21 +68,16 @@
   }
 
   body {
-    background-color: #050810;
-    color: #E2E8F0;
+    background-color: var(--bg-base);
+    color: var(--text-body);
     font-family: 'DM Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
-  .dark body {
-    background-color: #050810;
-    color: #E2E8F0;
-  }
-
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #050810; }
-  ::-webkit-scrollbar-thumb { background: #1E2D3D; border-radius: 10px; }
+  ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+  ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 10px; }
   ::-webkit-scrollbar-thumb:hover { background: #00D9FF; }
   ::selection { background-color: rgba(0, 217, 255, 0.2); color: #00D9FF; }
 }
@@ -47,8 +86,9 @@
   .glass {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    background: rgba(15, 25, 35, 0.6);
-    border: 1px solid rgba(30, 45, 61, 0.8);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
   }
 
   .gradient-text {

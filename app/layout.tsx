@@ -4,11 +4,13 @@ import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alexjohnson.dev"),
+  metadataBase: new URL("https://shounadhikary.dev"),
   title: {
     default: "Shoun Adhikary - AI/ML Engineer & CS Student",
     template: "%s | Shoun Adhikary",
   },
+
+  
   description:
     "Portfolio of Shoun Adhikary - Computer Science student, AI/ML researcher, and aspiring engineer specializing in Reinforcement Learning and Deep Learning.",
   keywords: [
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://shounadhikary.dev",
     siteName: "Shoun Adhikary Portfolio",
-    title: "Shoun Adhikary — AI/ML Engineer & CS Student",
+    title: "Shoun Adhikary - AI/ML Engineer & CS Student",
     description: "CS student specializing in AI/ML research and engineering. Building intelligent systems that solve real-world problems.",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
@@ -59,9 +61,9 @@ export default function RootLayout({
             position="bottom-right"
             toastOptions={{
               style: {
-                background: "#0F1923",
-                color: "#E2E8F0",
-                border: "1px solid #1E2D3D",
+                background: "var(--bg-card)",
+                color: "var(--text-body)",
+                border: "1px solid var(--border-line)",
               },
             }}
           />
